@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+ <meta charset="utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+ <title>SOGEDEP - {% block title %}{% endblock %}</title> 
+ <meta name="description" content="{% block metadescription %}{% endblock %}" />
+ <meta name="keywords" content="{% block metakeywords %}{% endblock %}" />
+ <meta name="robots" content="index, follow, all" />
+</head>
+
+<body>
+ <div class="container">
+
+  <a href="{{ path('home') }}"><img src="/images/depannage-electromenager.png" class="img-responsive" /></a>
+  {{ include("flash_site.html.twig") }}
+  {{ include("menu_site.html.twig") }} 	
+  {% block body %}{% endblock %}
+  {{ include("menu_site_gauche.html.twig") }}
+
+  <footer class="footer">
+   &copy; SOGEDEP | 
+   <a href="{{ path('contact') }}" title="Nous contacter">Nous contacter</a> | 
+   <a href="{{ path('mentions-legales') }}" title="Mentions l&eacute;gales">Mentions l&eacute;gales</a> | 
+   <a href="https://www.sogedis.fr/" target="_blank">Sogedis</a>
+  </footer>
+ 
+ </div>
+ <script src="{{ asset('/lib/jquery/jquery.min.js') }}"></script>
+ <script src="{{ asset('/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>
