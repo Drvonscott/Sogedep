@@ -49,10 +49,12 @@ $app->get('/mentions-legales', function () use ($app)
   return $app['twig']->render('site/mentions-legales.html.twig');
  })->bind('mentions-legales');
 
-$app->get('/demande-de-depannage', function () use ($app)
+$app->get('/demande-de-depannage', function (Request $request) use ($app)
  {
-  return $app['twig']->render('site/demande-de-depannage.html.twig');
- })->bind('demande-de-depannage');
+  return $app['twig']->render('site/demande-de-depannage.html.twig', array(
+   'error' => $app['security.last_error']($request)
+  ));
+ })->bind('demande-de-depannage'); 
 
 // Clients
 $app->get('/clients', function () use ($app)
@@ -170,5 +172,5 @@ $app->get('/login', function(Request $request) use ($app)
   return $app['twig']->render('login.html.twig', array(
    'error'         => $app['security.last_error']($request),
    'last_username' => $app['session']->get('_security.last_username'),
- ));
-})->bind('login');
+  ));
+ })->bind('login');
