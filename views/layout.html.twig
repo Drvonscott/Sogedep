@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
 <html>
 
 <head>
@@ -6,7 +6,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
- <link href="{{ asset('/css/sogedep.css') }}" rel="stylesheet" />
+ <link href="{{ asset('/css/site.css') }}" rel="stylesheet" />
  <title>Sogedep - {% block title %}{% endblock %}</title>
 </head>
 
@@ -20,7 +20,7 @@
      <span class="icon-bar"></span>
      <span class="icon-bar"></span>                        
     </button>
-    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('/images/logo_menu.png') }}" alt="Sogedep" style="width: 120px;"/></a>
+    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('/images/logo_menu.png') }}" alt="Sogedep" /></a>
    </div>
    {{ include("menu.html.twig") }}
   </div>
@@ -30,7 +30,7 @@
   
   {% block body %}{% endblock %}
 
-  <footer class="footer">
+  <footer>
    <a href="https://www.sogedis.fr/" target="_blank">Sogedis</a>
   </footer>
  </div>

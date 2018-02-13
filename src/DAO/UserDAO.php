@@ -40,17 +40,17 @@ class UserDAO extends DAO implements UserProviderInterface
   /**
    * {@inheritDoc}
    */
-  public function loadUserByUsername($pseudo)
+  public function loadUserByUsername($email)
    {
-    $sql = "SELECT * FROM utilisateurs WHERE pseudo = ?";
-    $row = $this->getDb()->fetchAssoc($sql, array($pseudo));
+    $sql = "SELECT * FROM utilisateurs WHERE email = ?";
+    $row = $this->getDb()->fetchAssoc($sql, array($email));
     if($row)
      {
       return $this->buildDomainObject($row);
      }
     else
      {
-      throw new UsernameNotFoundException(sprintf('Aucun utilisateur ne correspond à ce pseudo'));
+      throw new UsernameNotFoundException(sprintf('Aucun utilisateur ne correspond à cet email'));
      }
    }
    
@@ -90,8 +90,6 @@ class UserDAO extends DAO implements UserProviderInterface
     $user->setCodepostal($row['codepostal']);
     $user->setVille($row['ville']);
     $user->setEmail($row['email']);
-    $user->setInitiales($row['initiales']);
-    $user->setPseudo($row['pseudo']);
     $user->setPassword($row['password']);
     $user->setTelephone($row['telephone']);
     $user->setSalt($row['salt']);

@@ -25,15 +25,7 @@
    <a href="{{ path('contact') }}"><span class="glyphicon glyphicon-envelope"></span> Contact</a>
   </li>
  </ul>
- <ul class="nav navbar-nav navbar-right">
-  <li class="dropdown">
-   <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
-   <ul class="dropdown-menu">
-    <li><a href="{{ path('login') }}">Se connecter</a></li>
-    <li><a href="#">S'inscrire</a></li>
-    <li><a href="#">Se deconnecter</a></li>
-   </ul>
-  </li>
-  <li><a href="#"></a></li>
- </ul>
+
+ {{ include("menu_bandeau_droit.html.twig") }}
+
 </div>

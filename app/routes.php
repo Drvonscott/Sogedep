@@ -8,6 +8,27 @@ $app->get('/', function () use ($app)
   return $app['twig']->render('site/index.html.twig');
  })->bind('home');
 
+/* $app->get('/passwordgen', function() use ($app)
+ {
+  $rawPassword = 'test';
+
+  $charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\][{}\'";:?.>,<!@#$%^&*()-_=+|';
+  $randString = "";
+  $randStringLen = 23;
+  while(strlen($randString) < $randStringLen)
+   {
+    $randChar = substr(str_shuffle($charset), mt_rand(0, strlen($charset)), 1);
+    $randString .= $randChar;
+   }
+  $salt = $randString;
+  $encoder = $app['security.encoder.bcrypt'];
+
+  $mess = 'Ancien password = '.$rawPassword.'<br />';
+  $mess .= 'Salt = '.$salt.'<br />';
+  $mess .= 'Password = '.$encoder->encodePassword($rawPassword, $salt);
+  return $mess;
+ }); */
+
 // Site
 $app->get('/entreprise', function () use ($app)
  {

@@ -13,7 +13,7 @@ class User implements UserInterface
   private $id;
 
   /**
-   * User pseudo.
+   * User email.
    *
    * @var string
    */
@@ -94,21 +94,7 @@ class User implements UserInterface
    *
    * @var string
    */
-  private $email;
-
-  /**
-   * User initiales.
-   *
-   * @var string
-   */
-  private $initiales;
-
-  /**
-   * User pseudo.
-   *
-   * @var string
-   */
-  private $pseudo; 
+  private $email; 
 
   /**
    * User password.
@@ -157,9 +143,9 @@ class User implements UserInterface
     return $this->username;
    }
 
-  public function setUsername($pseudo)
+  public function setUsername($email)
    {
-    $this->username = trim($pseudo);
+    $this->username = trim($email);
     return $this;
    }  
 
@@ -281,28 +267,6 @@ class User implements UserInterface
   public function setEmail($email)
    {
     $this->email = strtolower(trim($email));
-    return $this;
-   }
-
-  public function getInitiales()
-   {
-    return $this->initiales;
-   }
-
-  public function setInitiales($initiales)
-   {
-    $this->initiales = strtoupper(trim($initiales));
-    return $this;
-   }
-
-  public function getPseudo()
-   {
-    return $this->pseudo;
-   }
-
-  public function setPseudo($pseudo)
-   {
-    $this->pseudo = trim($pseudo);
     return $this;
    }
 
